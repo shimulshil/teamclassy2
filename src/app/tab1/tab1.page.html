@@ -1,0 +1,33 @@
+<ion-content [fullscreen]="true">
+  <ion-icon name='scan-outline' id="scannerIcon" (click)="scan()"></ion-icon>
+  <ion-card class = "roomPicture">
+    <ion-img  src="/assets/roskilde.svg"></ion-img>
+    <h1 class="roomName" > R O 31 - Copenhagen</h1>
+  </ion-card>
+
+
+  <ion-card class="statusCard">
+
+    <div class="statusBar">
+      <ion-icon  class="ion-icon" name="thermometer-outline"></ion-icon>
+      <h1 class="statusText">Warm</h1>
+    </div>
+
+    <div class="statusBar">
+      <ion-icon  class="ion-icon" name="leaf-outline"></ion-icon>
+      <h1 class="statusText">Good</h1>
+    </div>
+
+    <div class="statusBar">
+      <ion-icon  class="ion-icon" name="water-outline"></ion-icon>
+      <h1 class="statusText">Fair</h1>
+    </div>
+
+    <div class="statusBar">
+      <ion-icon  class="ion-icon" name="cloud-outline"></ion-icon>
+      <h1 class="statusText">Windy</h1>
+    </div>
+
+  </ion-card>
+  
+</ion-content>

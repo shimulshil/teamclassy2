@@ -1,0 +1,58 @@
+<ion-app>
+  <ion-header translucent>
+    <ion-toolbar>
+      <ion-title>Hi, Borislav</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+    <ion-content fullscreen>
+    <ion-list>
+      <ion-card class="ion-card">
+        <ion-list-header>
+          <h2>Humidity</h2>
+        </ion-list-header>
+      
+        <ion-list-header>
+        <h5>Do you want the humidity to be higher or lower?</h5>
+        </ion-list-header>
+
+      <ion-item>
+        <ion-icon slot="start" size="large" color="primary" name="water-outline"></ion-icon>
+          <ion-range class="ion-range" min="40" max="60" step="1" from="50" value="50" pin="boolean">
+        </ion-range>
+        <ion-icon slot="end" size="large" color="danger" name="water-outline"></ion-icon>
+      </ion-item>
+
+      <ion-list-header>
+        <h2>Temperature</h2>
+      </ion-list-header>
+    
+      <ion-list-header>
+      <h5>Do you want the Temperature to be higher or lower?</h5>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-icon slot="start" size="large" color="primary" name="thermometer-outline"></ion-icon>
+        <ion-range class="ion-range" min="-3" max="3" step="1" from="0" pin="boolean">
+        </ion-range>
+        <ion-icon slot="end" size="large" color="danger" name="thermometer-outline"></ion-icon>
+      </ion-item>
+
+      <ion-list-header>
+        <h2>Air flow</h2>
+      </ion-list-header>
+    
+      <ion-list-header>
+      <h5>Do you want change the air flow to be higher or lower?</h5>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-img src="/assets/air1.png"></ion-img>
+        <ion-range class="ion-range air-flow" min="-3" max="3" step="1" from="0" pin="boolean">
+        </ion-range>
+        <ion-img src="/assets/air1.png"></ion-img>
+      </ion-item>
+    </ion-card>
+    </ion-list>
+  </ion-content>
+</ion-app>
