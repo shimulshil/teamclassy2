@@ -30,7 +30,7 @@
 
       <ion-item>
         <ion-icon slot="start" size="large" color="primary" name="thermometer-outline"></ion-icon>
-        <ion-range class="ion-range"  (ionChange)="tempChange()" [(ngModel)]="tempValue" min="-3" max="3" step="1" from="0" pin snaps>
+        <ion-range class={{type}}  (ionChange)="tempChange()" [(ngModel)]="tempValue" min="-3" max="3" step="1" from="0" pin="boolean" snaps>
         </ion-range>
         <ion-icon slot="end" size="large" color="danger" name="thermometer-outline"></ion-icon>
       </ion-item>
@@ -52,5 +52,6 @@
       </ion-item>
     </ion-card>
     </ion-list>
+    
   </ion-content>
 </ion-app>

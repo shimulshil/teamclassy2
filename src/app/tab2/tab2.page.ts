@@ -7,6 +7,8 @@ import { NavParams } from '@ionic/angular';
 
 
 
+
+
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
@@ -16,14 +18,10 @@ import { NavParams } from '@ionic/angular';
 export class Tab2Page implements OnInit {
 
   public tempValue = 3;
-
-  params: object;
-  pushPage: any;
-
+  public type="ion-range";
+  
   constructor() {
     this.tempValue = 0;
-    this.pushPage = Tab1Page;
-    this.params = { id: 42 };
   }
 
   ngOnInit(){
@@ -32,10 +30,52 @@ export class Tab2Page implements OnInit {
   }
 
   tempChange(){
-    //this.tempValue = this.navParams.data;
-    //console.log(this.tempValue);
-  }
 
+    switch(this.tempValue){
+      case -3: {
+        this.type="ion-range-3";
+        break;
+      }
+      case -2: {
+        this.type="ion-range-2";
+        break;
+      }
+      case -1: {
+        this.type="ion-range-1";
+        break;
+      }
+      case 0: {
+        this.type="ion-range0";
+        break;
+      }
+      case 1: {
+        this.type="ion-range1";
+        break;
+      }
+      case 2: {
+        this.type="ion-range2";
+        break;
+      }
+      case 3: {
+        this.type="ion-range3";
+        break;
+      }
+      default: {
+        console.log('error');
+        this.type="ion-range0";
+        break;
+      }
+    }
+    /*if (this.tempValue<0){
+    this.type="ion-range0"
+    
+     }
+    if (this.tempValue<-1){
+    this.type="ion-range-1"
+    
+     }*/
+    
+     }
   sayHello(){
     return this.tempValue;
   }
