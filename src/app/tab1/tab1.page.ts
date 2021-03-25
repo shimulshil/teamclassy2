@@ -1,5 +1,5 @@
-import { TabDataService } from './../tab-data.service';
-import { Tab2Page } from './../tab2/tab2.page';
+import { TabDataService } from '../tab-data.service';
+import { Tab2Page } from '../tab2/tab2.page';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 

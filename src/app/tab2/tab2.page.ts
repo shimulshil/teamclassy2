@@ -1,4 +1,4 @@
-import { Tab1Page } from './../tab1/tab1.page';
+import { Tab1Page } from '../tab1/tab1.page';
 import { Component, OnInit} from '@angular/core';
 
 import { NavParams } from '@ionic/angular';
