@@ -15,8 +15,5 @@ export class TabDataService {
         this.Tab2Page.next(data);
     }
 
-    getObservable(): Subject<any> {
-      this.tab2.sayHello();
-        return this.Tab2Page;
-    }
+    
 }

@@ -1,42 +1,31 @@
-import { Tab1Page } from './../tab1/tab1.page';
-import { Component, OnInit} from '@angular/core';
-
-import { NavParams } from '@ionic/angular';
-
-
-
-
+import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss']
 })
+export class Tab2Page {
 
-export class Tab2Page implements OnInit {
-
-  public tempValue = 3;
-
-  params: object;
-  pushPage: any;
-
-  constructor() {
-    this.tempValue = 0;
-    this.pushPage = Tab1Page;
-    this.params = { id: 42 };
-  }
-
-  ngOnInit(){
-    
-
-  }
+  constructor( ) {}
+  public tempValue;
+  public value;
+  public type="ion-range";
 
   tempChange(){
-    //this.tempValue = this.navParams.data;
-    //console.log(this.tempValue);
+  console.log(this.tempValue);
+  this.value=this.tempValue;
+  if (this.tempValue<0){
+    this.type="ion-range10"
+
+  }
+  if (this.tempValue<-1){
+    this.type="ion-range0"
+
   }
 
-  sayHello(){
-    return this.tempValue;
   }
+
 }
+

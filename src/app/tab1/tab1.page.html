@@ -2,7 +2,7 @@
   <ion-icon name='scan-outline' id="scannerIcon" ></ion-icon>
   <ion-card class = "roomPicture">
     <ion-img  src="/assets/roskilde.svg"></ion-img>
-    <h1 class="roomName" > R O 31 - Copenhagen</h1>
+    <h1 class="roomName" >{{RoomInt.Name}} </h1>
   </ion-card>
 
 
@@ -10,7 +10,7 @@
 
     <div class="statusBar">
       <ion-icon  class="ion-icon" name="thermometer-outline"></ion-icon>
-      <h1 class="statusText" (click)='seeTemp()' >{{tempStatus}}</h1>
+      <h1 class="statusText" (click)='seeTemp()' >{{RoomInt.tempStr}}</h1>
     </div>
 
     <div class="statusBar">
