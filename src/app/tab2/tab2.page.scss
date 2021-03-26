@@ -3,12 +3,9 @@
     --bar-height: 10px;
     // --bar-background: linear-gradient(90deg, rgba(227,3,3,1) 0%, rgba(240,177,28,1) 20%, rgba(244,235,44,1) 30%, rgba(76,238,57,1) 50%, rgba(40,246,251,1) 70%, rgba(11,124,221,1) 100%);
     --knob-size: 30px;
-    --knob-background:#006600;
-    // --knob-background: #{ion-color(primary, base, 0.26)};
-    // --knob-background-active: #{ion-color(primary, base)};
-    --bar-background-active:none ;
-    // --pin-background: black;
-    // --pin-color: red;
+    // --knob-background:#0011ff;
+    --knob-background:#0011ff;
+    --bar-background-active: none;
 }
 
 .ion-card{
@@ -25,3 +22,31 @@
     margin-left: 4px;
     margin-right: 5px;
 }
+
+.ion-range-3{
+    @extend .ion-range;
+    --knob-background:#0b7cdd;
+}
+.ion-range-2{
+    @extend .ion-range;
+    --knob-background:#28f6fb;
+}
+.ion-range-1{
+    @extend .ion-range;
+    --knob-background:#4cee39;
+}
+.ion-range0{
+    @extend .ion-range;
+    --knob-background:#ffffff;
+}
+.ion-range1{
+    @extend .ion-range;
+    --knob-background:#f4eb2c;
+}
+.ion-range2{
+    @extend .ion-range;
+    --knob-background:#f0b11c;
+}
+.ion-range3{
+    @extend .ion-range;
+    --knob-background:#e30303;}

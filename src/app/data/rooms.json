@@ -1,0 +1,16 @@
+{
+    "D1": {
+        "Name":"R O 31 - Copenhagen",
+        "tempStr":"Warm",
+        "airQuStr":"Good",
+        "humStr":"Fair"
+    
+    },
+    "D2": {
+        "Name":"R D 27 - Roskilde",
+        "tempStr":"Chilly",
+        "airQuStr":"Bad",
+        "humStr":"Good"
+    
+    }
+}

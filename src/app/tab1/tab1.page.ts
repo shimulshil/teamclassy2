@@ -1,9 +1,4 @@
-import { TabDataService } from './../tab-data.service';
-import { Tab2Page } from './../tab2/tab2.page';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-
-import { NavParams } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -12,22 +7,14 @@ import { NavParams } from '@ionic/angular';
 })
 export class Tab1Page implements OnInit {
 
-  private tab2: Tab2Page
-
   public tempStatus: string;
 
-  public datValue: string;
 
-  constructor(public navParams: NavParams) {
-    this.tempStatus = 'Hot';
-    this.datValue = this.navParams.get('userParams');
+  constructor() {
+    this.tempStatus = 'Normal';
   }
 
-  ngOnInit(){  
-  }
-
-  seeTemp(){
-    alert(this.datValue);
+  ngOnInit(){
   }
 
 }

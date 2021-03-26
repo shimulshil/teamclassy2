@@ -1,4 +1,3 @@
-import { Tab2Page } from './../tab2/tab2.page';
 import { Component } from '@angular/core';
 
 
@@ -14,13 +13,8 @@ export class TabsPage {
 
   constructor() {}
 
-  Tab2Page: Tab2Page;
-  tempStatus;
-
   getValue(){
      this.tempValue = document.getElementsByClassName('aux-input')[1];
-     //this.tempStatus = document.getElementsByClassName('statusText')[1].innerHTML;
-     //console.log(this.tempStatus);
 
      switch (this.tempValue.value) {
 

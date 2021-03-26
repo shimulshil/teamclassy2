@@ -1,11 +1,4 @@
-import { Tab1Page } from './../tab1/tab1.page';
 import { Component, OnInit} from '@angular/core';
-
-import { NavParams } from '@ionic/angular';
-
-
-
-
 
 @Component({
   selector: 'app-tab2',
@@ -15,52 +8,51 @@ import { NavParams } from '@ionic/angular';
 
 export class Tab2Page implements OnInit {
 
-  public tempValue = 3;
-
-  params: object;
-  pushPage: any;
-
-  number: number;
-  color: string;
-
+  public tempValue;
+  public type = 'ion-range0';
   constructor() {
     this.tempValue = 0;
-    this.pushPage = Tab1Page;
-    this.params = { id: 42 };
   }
 
-  onRangeChangeHandler() {
-
-    if (this.number >2 && this.number <=3) {
-        this.color = 'danger';
-    }
-    else if (this.number >1 && this.number <=2) {
-      this.color = 'warning';
-    }
-    else if (this.number >-1 && this.number <=1) {
-      this.color = 'success';
-    }
-    else if (this.number >-2 && this.number <=-1) {
-      this.color = 'secondary';
-    }
-    else if (this.number >=-3 && this.number <=-2) {
-      this.color = 'primary';
-    }
-    else {
-      this.color = 'light';
-    }
-  }
-  
   ngOnInit(){
-    
-
   }
 
   tempChange(){
-    
-  }
 
-  sayHello(){
-    return this.tempValue;
-  }
+    switch (this.tempValue){
+      case -3: {
+        this.type = 'ion-range-3';
+        break;
+      }
+      case -2: {
+        this.type = 'ion-range-2';
+        break;
+      }
+      case -1: {
+        this.type = 'ion-range-1';
+        break;
+      }
+      case 0: {
+        this.type = 'ion-range0';
+        break;
+      }
+      case 1: {
+        this.type = 'ion-range1';
+        break;
+      }
+      case 2: {
+        this.type = 'ion-range2';
+        break;
+      }
+      case 3: {
+        this.type = 'ion-range3';
+        break;
+      }
+      default: {
+        console.log('error');
+        this.type = 'ion-range0';
+        break;
+      }
+    }
+     }
 }
