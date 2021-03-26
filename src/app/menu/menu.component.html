@@ -1,0 +1,4 @@
+<ion-list>
+  <ion-list-header>Choose a room</ion-list-header>
+  <ion-item button *ngFor='let room of rooms' (click)="changeRoom(room)" >{{room.name}}</ion-item>
+</ion-list>
