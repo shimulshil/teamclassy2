@@ -88,10 +88,6 @@ const routes: Routes &#x3D; [
         loadChildren: () &#x3D;&gt; &quot;import(&#x27;../tab2/tab2.module&#x27;).then(m &#x3D;&gt; m.Tab2PageModule)&quot;
       },
       {
-        path: &#x27;tab3&#x27;,
-        loadChildren: () &#x3D;&gt; &quot;import(&#x27;../tab3/tab3.module&#x27;).then(m &#x3D;&gt; m.Tab3PageModule)&quot;
-      },
-      {
         path: &#x27;&#x27;,
         redirectTo: &#x27;/tabs/tab1&#x27;,
         pathMatch: &#x27;full&#x27;
