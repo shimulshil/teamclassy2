@@ -13,8 +13,6 @@ export class TabsPage {
 
   constructor() {}
 
-  tempStatus;
-
   getValue(){
      this.tempValue = document.getElementsByClassName('aux-input')[1];
 
