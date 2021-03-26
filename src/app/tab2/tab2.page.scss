@@ -11,7 +11,7 @@
     background: #EFF1EC;
     border-radius: 20px;
     height: 50%;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     
 }
 .air-flow{
@@ -50,3 +50,10 @@
 .ion-range3{
     @extend .ion-range;
     --knob-background:#e30303;}
+.card {
+    background:#EFF1EC;
+    border-radius: 20px; 
+    height:100%;
+    width:auto;
+    padding: 3%;  
+    }
