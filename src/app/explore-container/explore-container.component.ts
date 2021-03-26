@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-explore-container',
@@ -8,8 +9,18 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ExploreContainerComponent implements OnInit {
   @Input() name: string;
 
-  constructor() { }
+  constructor(private menu: MenuController) { }
 
   ngOnInit() {}
+
+  openFirst() {
+    console.log('virker');
+    this.menu.enable(true, 'first');
+    this.menu.open('first');
+  }
+
+  openEnd() {
+    this.menu.open('end');
+  }
 
 }

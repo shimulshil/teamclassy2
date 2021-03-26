@@ -5,7 +5,14 @@
 export const environment = {
   production: false,
   firebase:{
-   //-------- API DATA ------
+    apiKey: 'AIzaSyBn62-rAmOAQ4zxOPjbDutKmZbwBK8W5wE',
+  authDomain: 'bob-test-b7f44.firebaseapp.com',
+  databaseURL: 'https://bob-test-b7f44-default-rtdb.firebaseio.com',
+  projectId: 'bob-test-b7f44',
+  storageBucket: 'bob-test-b7f44.appspot.com',
+  messagingSenderId: '914422395896',
+  appId: '1:914422395896:web:67c09786329034f61c5c0d',
+  measurementId: 'G-B4V4V82RCN'
 }
 };
 

@@ -1,0 +1,6 @@
+<ion-list>
+  <ion-list-header>Rooms</ion-list-header>
+  <ion-item button [routerLink]="['/tabs/tab1', RoomInt.Name]">{{RoomInt.Name}}</ion-item>
+  <ion-item button [routerLink]="['/tabs/tab1', RoomIsak.Name]">{{RoomIsak.Name}}</ion-item>
+  <ion-item lines="none" detail="false" button onClick="dismissPopover()">Close</ion-item>
+</ion-list>

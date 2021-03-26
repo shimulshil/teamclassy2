@@ -1,8 +1,10 @@
+
 <ion-content [fullscreen]="true">
-  <ion-icon name='scan-outline' id="scannerIcon" ></ion-icon>
+  
+  <ion-icon button (click)="presentMenu($event)" name='scan-outline' id="scannerIcon" ></ion-icon>
   <ion-card class = "roomPicture">
     <ion-img  src="/assets/roskilde.svg"></ion-img>
-    <h1 class="roomName" >{{RoomInt.Name}} </h1>
+    <h1 class="roomName" >{{roomID}} </h1>
   </ion-card>
 
 

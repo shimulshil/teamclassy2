@@ -6,6 +6,9 @@ import { ActivatedRoute } from '@angular/router';
 import { NavParams } from '@ionic/angular';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { FirebaseService } from '../services/firebase.service';
+import { PopoverController } from '@ionic/angular';
+import { MenuComponent } from '../menu/menu.component';
+
 
 
 
@@ -17,8 +20,20 @@ import { FirebaseService } from '../services/firebase.service';
 export class Tab1Page implements OnInit {
   room;
 
+  roomID;
+
   //private tab2: Tab2Page
   public RoomInt = {
+    Name: String,
+    tempStr: String,
+    tempValue: Number,
+    airQuStr: String,
+    humValue: Number,
+    humStr: String
+  
+  }
+
+  public RoomIsak = {
     Name: String,
     tempStr: String,
     tempValue: Number,
@@ -33,14 +48,19 @@ export class Tab1Page implements OnInit {
   public roomName: string;
   constructor(public navParams: NavParams,
               private firebaseService: FirebaseService,
+              public popoverController: PopoverController,
+              activatedRoute: ActivatedRoute
+              
               ) { 
     this.tempStatus = 'Hot';
     this.datValue = this.navParams.get('userParams');
+    this.roomID = activatedRoute.snapshot.params["roomID"];
+    console.log(this.roomID);
   }
 roomId = 'D1'
   ngOnInit(){  
     this.firebaseService.read_room().subscribe(data =>{
-      console.log(data);
+      //console.log(data);
       
   this.room = data.map(e => {
         return {
@@ -52,15 +72,30 @@ roomId = 'D1'
          // Address: e.payload.doc.data()['Address'],
         };
       })
-      console.log(this.room);
+      //console.log(this.room);
       this.RoomInt = this.room[0];
+      this.RoomIsak = this.room[1];
 
     });
+
+    
   
   }
 
-  seeTemp(){
+ /* seeTemp(){
     alert(this.datValue);
+  }*/
+
+  async presentMenu(ev: any) {
+    const popover = await this.popoverController.create({
+      component: MenuComponent,
+      cssClass: 'my-custom-class',
+      event: ev,
+      translucent: true
+    });
+    return await popover.present();
   }
+
+  
 
 }

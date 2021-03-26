@@ -18,6 +18,10 @@ import { AngularFirestore } from '@angular/fire/firestore';
         read_room() {
           return this.firestore.collection(this.collectionName).snapshotChanges();
         }
+
+        getAllRoom() {
+          return this.firestore.collection(this.collectionName).snapshotChanges();
+        }
       
         
       }
