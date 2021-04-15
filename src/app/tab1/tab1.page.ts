@@ -1,3 +1,4 @@
+import { TutorialService } from './../services/tutorial.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,13 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class Tab1Page implements OnInit {
 
   public tempStatus: string;
+  public testValue;
 
 
   constructor() {
     this.tempStatus = 'Normal';
   }
 
-  ngOnInit(){
+  ngOnInit() {
   }
 
 }

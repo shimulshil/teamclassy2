@@ -3,6 +3,11 @@
   </ion-header>
   
     <ion-content fullscreen>
+      <ion-card class="">
+        <ion-list-header>
+          <h2>Roskilde</h2>
+        </ion-list-header>
+      
     <ion-list>
       <ion-card class="ion-card">
         <ion-list-header>
@@ -29,7 +34,7 @@
 
       <ion-item>
         <ion-icon slot="start" size="large" color="primary" name="thermometer-outline"></ion-icon>
-        <ion-range class={{type}}  (ionChange)="tempChange()" [(ngModel)]="tempValue" min="-3" max="3" step="1" from="0" pin="boolean" snaps>
+        <ion-range class={{type}} (ionChange)="tempChange()" [(ngModel)]="tempValue" min="-3" max="3" step="1" from="0" pin="boolean" snaps>
         </ion-range>
         <ion-icon slot="end" size="large" color="danger" name="flame"></ion-icon>
       </ion-item>
@@ -51,6 +56,9 @@
       </ion-item>
     </ion-card>
     </ion-list>
+
+    <ion-button routerLink="/">Submit</ion-button>
     
+  </ion-card>
   </ion-content>
 </ion-app>
