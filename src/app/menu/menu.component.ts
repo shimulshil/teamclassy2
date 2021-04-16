@@ -1,5 +1,5 @@
-import { TutorialService } from './../services/tutorial.service';
-import { Tutorial } from './../models/tutorial.model';
+import { RoomService } from './../services/room.service';
+import { Room } from './../models/room.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,24 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  public rooms = [
+  /*public rooms = [
     {name: 'Copenhagen', temp: 'Hot', air: 'Good', humidity: 'Dry'},
     {name: 'Roskilde', temp: 'Cold', air: 'Not Good', humidity: 'Moist'}
-    ];
+    ];*/
 
-  tutorials: Tutorial[];
+  rooms: Room[];
 
-  constructor(private tutorialService: TutorialService) { }
+  constructor(private roomService: RoomService) { }
 
   ngOnInit(): void {
-    this.retrieveTutorials();
+    this.retrieveRooms();
 }
 
-retrieveTutorials(): void {
-  this.tutorialService.getAll()
+retrieveRooms(): void {
+  this.roomService.getAll()
     .subscribe(
       data => {
-        this.tutorials = data;
+        this.rooms = data;
         console.log(data);
       },
       error => {

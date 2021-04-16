@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+import { TutorialService } from './../services/tutorial.service';
 
 @Component({
   selector: 'app-tab2',
@@ -10,7 +11,8 @@ export class Tab2Page implements OnInit {
 
   public tempValue;
   public type = 'ion-range0';
-  constructor() {
+
+  constructor(private tutorialService: TutorialService) {
     this.tempValue = 0;
   }
 
@@ -55,4 +57,9 @@ export class Tab2Page implements OnInit {
       }
     }
      }
+
+  addTutorial(data){
+    this.tutorialService.create(data);
+
+  }
 }
