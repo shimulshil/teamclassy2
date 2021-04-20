@@ -1,5 +1,8 @@
 import { Component, OnInit} from '@angular/core';
+import {FeedbackService} from './../services/feedback.service'
 import { TutorialService } from './../services/tutorial.service';
+import { Feedback } from '../models/feedback.model';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-tab2',
@@ -10,16 +13,21 @@ import { TutorialService } from './../services/tutorial.service';
 export class Tab2Page implements OnInit {
 
   public tempValue;
+  public humValue;
+  public airValue;
   public type = 'ion-range0';
 
-  constructor(private tutorialService: TutorialService) {
+  constructor(private tutorialService: TutorialService, private feedbackservice: FeedbackService) {
     this.tempValue = 0;
+    this.humValue = 0;
+    this.airValue = 0;
   }
 
   ngOnInit(){
   }
 
   tempChange(){
+    console.log(this.tempValue,"-temp, ", this.humValue," - hum, ", this.airValue," - air")
 
     switch (this.tempValue){
       case -3: {
@@ -61,5 +69,24 @@ export class Tab2Page implements OnInit {
   addTutorial(data){
     this.tutorialService.create(data);
 
+  }
+  saveFeedback(): void {
+    const data = {
+      roomID : 2,
+      fHumidity : this.humValue,
+      fTemperature : this.tempValue,
+      fAirQuality: this.airValue
+      
+    };
+
+    this.feedbackservice.create(data)
+      .subscribe(
+        response => {
+          console.log(response);
+         // this.submitted = true;
+        },
+        error => {
+          console.log(error);
+        });
   }
 }
