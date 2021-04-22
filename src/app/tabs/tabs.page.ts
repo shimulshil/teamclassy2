@@ -11,6 +11,8 @@ export class TabsPage {
 
   tempValue;
 
+  public BabuskaValue = 5;
+
   constructor() {}
 
   getValue(){

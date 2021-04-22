@@ -20,7 +20,6 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
     this.retrieveRooms();
-    //console.log(this.rooms);
 }
 
 retrieveRooms(): void {
@@ -158,6 +157,7 @@ assignValue(value, index){
 }
 
   changeRoom(room){
+    document.getElementById('roomID').innerHTML = room.id;
     document.getElementsByClassName('roomName')[0].innerHTML = room.roomName;
     document.getElementsByClassName('statusText')[0].innerHTML = this.assignValue(room.sTemperature, 'sTemperature');
     document.getElementsByClassName('statusText')[1].innerHTML = this.assignValue(room.sAirQuality, 'sAirQuality');

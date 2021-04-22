@@ -5,7 +5,7 @@
     <ion-content fullscreen>
       <ion-card class="">
         <ion-list-header>
-          <h2>Roskilde</h2>
+          <h2>{{roomName}}</h2>
         </ion-list-header>
 
       
@@ -19,7 +19,7 @@
 
       <ion-item>
         <ion-icon slot="start" size="large" color="primary" name="water-outline"></ion-icon>
-          <ion-range class="ion-range" min="40" max="60" step="1" from="50" value="50" pin="boolean"  [(ngModel)]="humValue">
+          <ion-range class="ion-range" min="-3" max="3" step="1" from="0" value="0" pin="boolean"  [(ngModel)]="humValue">
         </ion-range>
         <ion-icon slot="end" size="large" color="danger" name="water"></ion-icon>
       </ion-item>

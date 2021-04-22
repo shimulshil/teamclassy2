@@ -1,8 +1,6 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, DoCheck, OnInit, ɵɵtrustConstantResourceUrl} from '@angular/core';
 import {FeedbackService} from './../services/feedback.service'
-import { TutorialService } from './../services/tutorial.service';
-import { Feedback } from '../models/feedback.model';
-import { from } from 'rxjs';
+
 
 @Component({
   selector: 'app-tab2',
@@ -10,14 +8,16 @@ import { from } from 'rxjs';
   styleUrls: ['tab2.page.scss']
 })
 
-export class Tab2Page implements OnInit {
+export class Tab2Page implements OnInit, DoCheck {
 
   public tempValue;
   public humValue;
   public airValue;
   public type = 'ion-range0';
+  public roomName = document.getElementsByClassName('roomName')[0].innerHTML;
+  public roomID = document.getElementById('roomID').innerHTML;
 
-  constructor(private tutorialService: TutorialService, private feedbackservice: FeedbackService) {
+  constructor(private feedbackservice: FeedbackService) {
     this.tempValue = 0;
     this.humValue = 0;
     this.airValue = 0;
@@ -26,8 +26,14 @@ export class Tab2Page implements OnInit {
   ngOnInit(){
   }
 
+  ngDoCheck(){
+    this.roomName = document.getElementsByClassName('roomName')[0].innerHTML;
+    this.roomID = document.getElementById('roomID').innerHTML;
+
+  }
+
   tempChange(){
-    console.log(this.tempValue,"-temp, ", this.humValue," - hum, ", this.airValue," - air")
+    console.log(document.getElementsByClassName('roomName')[0].innerHTML);
 
     switch (this.tempValue){
       case -3: {
@@ -65,14 +71,9 @@ export class Tab2Page implements OnInit {
       }
     }
      }
-
-  addTutorial(data){
-    this.tutorialService.create(data);
-
-  }
   saveFeedback(): void {
     const data = {
-      roomID : 2,
+      roomID : Number(this.roomID),
       fHumidity : this.humValue,
       fTemperature : this.tempValue,
       fAirQuality: this.airValue
